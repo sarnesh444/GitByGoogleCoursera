@@ -1,0 +1,17 @@
+VERSION CONTROL SYSTEM
+aka source control management
+====================== 
+
+
+A Version Control System keeps track of the changes that we make to our files. 
+By using a VCS, we can know when the changes were made and who made them. 
+It also lets us easily revert a change if it turned out not to be a good idea. 
+It makes collaboration easier by allowing us to merge changes from lots of different sources.
+
+However, unlike a regular file server which only saves the most recent version of a file, a VCS keeps track of all the different versions that we create as we save our changes. 
+
+
+On top of this, we can make edits to multiple files and treat that collection of edits as a single change which is commonly known as a, commit. 
+
+
+When a change is encountered and is causing issues we can rollback to the one which is healthy

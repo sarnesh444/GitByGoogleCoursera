@@ -1,0 +1,39 @@
+windows equivalent of the unix diff commnand is FC
+
+syn:
+FC file1 file2
+
+e.g
+FC check_diff.py cpu_usage.py
+o/p:
+Comparing files check_diff.py and CPU_USAGE.PY
+***** check_diff.py
+    print("this line has been added")
+***** CPU_USAGE.PY
+*****
+
+
+UBUNTU commands:
+
+DIFF
+"diff -U file1 file2" is used to get the differences between the two files.
+
+
+DIFF FILE
+"filename.diff" stores the differences between the two files 
+
+to generate a diff file
+eg."diff -u disk_usage_original.py disk_usage_fixed.py > disk_usage.diff" gives the differences between original and modified file and copies them into a .diff file which can later be used with patch command
+
+
+PATCH:
+"patch fileyouwantoapplychangesto < difffile" this will move all the changes from .diff file to fileyouwanttoapplychangesto
+
+
+eg."patch disk_usage.py < disk_usage.diff" with this command the changes in disk_usage.diff(obtained by getting the differences between original file which had bugs and fixed file free from bugs) 
+are applied to disk_usage.py
+
+
+
+
+

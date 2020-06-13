@@ -1,0 +1,56 @@
+commmands week1
+=============
+The git directory contains all the changes and their history and the working tree contains the current versions of the files.
+===================================================================
+
+1."git init"-initializes an empty git repository
+
+
+2."git add filename" adds the file from working tree to git to enable tracking of that file
+
+The staging area which is also known as the index is a file maintained by Git that contains all of the information about what files and changes are going to go into your next command.
+
+3."git status" to get the status of current working tree and pending changes
+
+
+"changes to be committed"=means the file is in staging area and has to be committed 
+
+4."git commit -m message" this will move the files from staging to committed 
+
+commit message structure:
+A short description of the change (up to 50 characters), followed by one or more paragraphs giving more details of the change (if needed)
+
+5."git config -l" gives the configuration of the current repo
+
+6."git log" displays history of commits
+=======================================================================
+3 main phases:
+
+git dir-contains history of all the files and changes
+working tree-contains the current state of the project
+staging area-contains changes that have been marked to be included in the next commit
+
+==========================================================================
+Each Tracked file can be in one of the three states
+
+1.modified state
+
+means that we have made changes to the file that we have'nt committed yet
+changes could be adding modifying or deleting the contents of the file
+if a file is not added using "git add" then it is still in the modified state
+
+2.staging state
+git notices any time we modify our files but wont store any until we add them to the staging area
+mark the changes for tracking
+changes to the files are ready to be pushed
+a file is in staging if "git add filename" is run
+
+3.committed
+when we store thosse changes in the vcs
+a file moves from staging to committed after running "git commit -m message"
+
+=============================================================================
+
+
+
+
