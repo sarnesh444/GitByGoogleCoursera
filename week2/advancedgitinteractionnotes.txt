@@ -1,0 +1,39 @@
+1."git commit -a -m message" skips the staging area and commits directly
+
+HEAD:
+git uses HEAD alias to represent the currently checked out snapshot of project
+its like a book mark
+pointer to the current branch
+
+
+
+2."git log -p" gives log commits and also what are the changes that have been made like the patch command
+
+"-" represents removed lines
+"+" represents added lines
+
+
+3."git show commitid" gives all the details specifically for that commit id along with patch
+
+4."git log --stat" gives some stats of commits
+
+
+5."git diff "-gives the difference between the files
+we could pass a file by parameter to see the differences
+
+
+6.To review changes before adding them we can use -p flag to "git add -p" will show the change being added and ask us if we would like to stage it or not
+
+
+7."git diff --staged" to see the changes that are staged but not committed
+
+
+8."git rm filename" - removes the file from the repo and prevents git from tracking it
+	later commit the  changes
+
+7."git mv oldfilename newfilename" renames the file this stages the file but does not commit it
+
+
+8.".gitignore" can be used to prevent from pushing unecessary files generated from program or OS .gitignore can be specified with what should be ignored
+
+ 

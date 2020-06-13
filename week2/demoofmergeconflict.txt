@@ -1,0 +1,83 @@
+saran@DESKTOP-REEASVS MINGW64 ~/Desktop/guided_project/gitbygoogle/week2/practisingrollback (master)
+$ ls -l
+total 2
+-rw-r--r-- 1 saran 197609 47 Jun 13 17:45 demoforrollback.py
+-rw-r--r-- 1 saran 197609 41 Jun 13 18:02 new.txt
+
+saran@DESKTOP-REEASVS MINGW64 ~/Desktop/guided_project/gitbygoogle/week2/practisingrollback (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+saran@DESKTOP-REEASVS MINGW64 ~/Desktop/guided_project/gitbygoogle/week2/practisingrollback (master)
+$ vim new.txt
+
+saran@DESKTOP-REEASVS MINGW64 ~/Desktop/guided_project/gitbygoogle/week2/practisingrollback (master)
+$ git commit -a -m "changed the new.txt file writing master"
+[master 6f67db0] changed the new.txt file writing master
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+saran@DESKTOP-REEASVS MINGW64 ~/Desktop/guided_project/gitbygoogle/week2/practisingrollback (master)
+$ git branch
+* master
+  new-feature
+
+saran@DESKTOP-REEASVS MINGW64 ~/Desktop/guided_project/gitbygoogle/week2/practisingrollback (master)
+$ git checkout new-feature
+Switched to branch 'new-feature'
+
+saran@DESKTOP-REEASVS MINGW64 ~/Desktop/guided_project/gitbygoogle/week2/practisingrollback (new-feature)
+$ vim new.txt
+
+saran@DESKTOP-REEASVS MINGW64 ~/Desktop/guided_project/gitbygoogle/week2/practisingrollback (new-feature)
+$ git commit -a -m "changed the new.txt file writing new-feature"
+[new-feature 6d9f755] changed the new.txt file writing new-feature
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+saran@DESKTOP-REEASVS MINGW64 ~/Desktop/guided_project/gitbygoogle/week2/practisingrollback (new-feature)
+$ git checkout master
+Switched to branch 'master'
+
+saran@DESKTOP-REEASVS MINGW64 ~/Desktop/guided_project/gitbygoogle/week2/practisingrollback (master)
+$ git merge new-feature
+Auto-merging new.txt
+CONFLICT (content): Merge conflict in new.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+saran@DESKTOP-REEASVS MINGW64 ~/Desktop/guided_project/gitbygoogle/week2/practisingrollback (master|MERGING)
+$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+
+        both modified:   new.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+saran@DESKTOP-REEASVS MINGW64 ~/Desktop/guided_project/gitbygoogle/week2/practisingrollback (master|MERGING)
+$ vim new.txt
+
+saran@DESKTOP-REEASVS MINGW64 ~/Desktop/guided_project/gitbygoogle/week2/practisingrollback (master|MERGING)
+$ git add new.txt
+
+saran@DESKTOP-REEASVS MINGW64 ~/Desktop/guided_project/gitbygoogle/week2/practisingrollback (master|MERGING)
+$ git status
+On branch master
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+
+        modified:   new.txt
+
+
+saran@DESKTOP-REEASVS MINGW64 ~/Desktop/guided_project/gitbygoogle/week2/practisingrollback (master|MERGING)
+$ git commit
+[master 85065e8] Merge branch 'new-feature'
+
+saran@DESKTOP-REEASVS MINGW64 ~/Desktop/guided_project/gitbygoogle/week2/practisingrollback (master)
+$

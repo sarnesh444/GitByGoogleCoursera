@@ -1,0 +1,60 @@
+BRANCHES
+==============
+
+independent line of development in a project
+To enable changes to be worked on without disrupting the most current working state.
+
+when you encounter a new idea make it in a new branch iterate over the code and when you feel it is working merge it to the master
+
+"git branch" shows a list of the current branches
+
+"git branch branchname"-creates a new branch if it does not exist
+
+
+checkout is used to check out the latest snapshot for both files and branches
+
+"git checkout branchname"-navigates you from your cur branch to the name mentioned
+
+
+"git checkout -b branchname"-creates a new branch and navigates to it
+
+
+"git checkout" switches branches by  updating the working tree to match the selected branch.
+
+
+"git branch -d branchname"-deletes the branch 
+if it has files that havent been merged to the master then it flags an error
+
+
+MERGING
+==============
+combining branched data and history together
+
+"git merge branchname" used to merge the files from a branch to the master
+
+after merging from branch to master all the files will be in master and the logs shall also be merged
+
+now the branches and master are pointed at the same commit.
+
+types of merge
+*fast forward =occurs when all the commits in checkedout branch are also in the branch that is being merged
+*three-way merge=performed when the history of merging has diverged in some way
+happens when commit is made on one branch after the point when both branches split
+
+
+MERGE CONFLICTS:
+====================
+the brances trying to merge have edits to the same part of the same file
+
+when merging git will flag error open the file and edit it to see which changes you would like to keep thereby solving the conflict
+then add the file on the current branch
+then commit
+since the new-feature is merged with master and merge coflict is resolved the changes made shall appear only in the master and new-feature shall remain as it is since it has been merged to master and not vice versa
+
+
+
+"git log --graph --oneline" -gives graphical representatiion of merging and also gives only one line description of each commit in the log
+
+
+"git merge --abort"-stops the merge and reset the files back to previous commit wher merge happened
+

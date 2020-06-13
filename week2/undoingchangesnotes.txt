@@ -1,0 +1,52 @@
+UNDOING THE CHANGES
+======================
+
+1."git checkout filename" revert changes to modify files before they get staged
+
+this will restore the file to the latest storage snapshot
+restore the file to the earlier staged version 
+reverts changes to modified files before they are staged.
+
+
+2."git reset HEAD filename"
+used when the file is already staged(added via git add.) and now you want to untrack the file.
+"git add"=adds changes to the staging area
+"git reset"=remove changes from the staging area
+
+3."git commit --amend"
+usecase:when you had to add multiple files but you have added only one file (via git add) and committed
+
+so to commit the second file add the 2nd file(via git add)
+and use "git commit --amend"
+to add commit message and commit the 1st and the second file as well
+Awesome! git commit --amend allows us to modify and add changes to the most recent commit.
+Overwrite the previous commit.
+
+
+4.If you have created a bad commit and would like to roll back i.e shift back to the last working commit 
+"git revert HEAD" this will roll back to the prev version making an implicit commit.
+now all the files will be same as the ones before bad commit 
+With git revert, a new commit is created with inverse changes. This cancels previous changes instead of making it as though the original commit never happened.
+this will move back to the latest commit not the commits before it
+
+5."git log -p -2" -p gives the patch and -2 gives the info of the last 2 commits
+
+
+6."git revert commitid"-can be used to rollback to the specified commit id.
+
+
+git checkout is effectively used to switch branches.
+
+git reset basically resets the repo, throwing away some changes. It’s somewhat difficult to understand, so reading the examples in the documentation may be a bit more useful.
+
+There are some other useful articles online, which discuss more aggressive approaches to resetting the repo.
+
+git commit --amend is used to make changes to commits after-the-fact, which can be useful for making notes about a given commit.
+
+git revert makes a new commit which effectively rolls back a previous commit. It’s a bit like an undo command.
+
+There are a few ways you can rollback commits in Git.
+
+There are some interesting considerations about how git object data is stored, such as the usage of sha-1.
+
+Feel free to read more here:

@@ -1,0 +1,65 @@
+saran@DESKTOP-REEASVS MINGW64 ~/Desktop/guided_project/gitbygoogle/week2/practisingrollback (master)
+$ git init
+Initialized empty Git repository in C:/Users/saran/Desktop/guided_project/gitbygoogle/week2/practisingrollback/.git/
+
+saran@DESKTOP-REEASVS MINGW64 ~/Desktop/guided_project/gitbygoogle/week2/practisingrollback (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        demoforrollback.py
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+saran@DESKTOP-REEASVS MINGW64 ~/Desktop/guided_project/gitbygoogle/week2/practisingrollback (master)
+$ git add .
+
+saran@DESKTOP-REEASVS MINGW64 ~/Desktop/guided_project/gitbygoogle/week2/practisingrollback (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   demoforrollback.py
+
+
+saran@DESKTOP-REEASVS MINGW64 ~/Desktop/guided_project/gitbygoogle/week2/practisingrollback (master)
+$ git commit -m "commiting the demorollbackp.py before roll back has only helloworld"[master (root-commit) 2080162] commiting the demorollbackp.py before roll back has only helloworld
+ 1 file changed, 1 insertion(+)
+ create mode 100644 demoforrollback.py
+
+saran@DESKTOP-REEASVS MINGW64 ~/Desktop/guided_project/gitbygoogle/week2/practisingrollback (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   demoforrollback.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+saran@DESKTOP-REEASVS MINGW64 ~/Desktop/guided_project/gitbygoogle/week2/practisingrollback (master)
+$ git add .
+
+saran@DESKTOP-REEASVS MINGW64 ~/Desktop/guided_project/gitbygoogle/week2/practisingrollback (master)
+$ git commit -m "commiting after making changes to demoforrollback.py adding call() which has not been defined"
+[master 30f72d5] commiting after making changes to demoforrollback.py adding call() which has not been defined
+ 1 file changed, 1 insertion(+)
+
+saran@DESKTOP-REEASVS MINGW64 ~/Desktop/guided_project/gitbygoogle/week2/practisingrollback (master)
+$ git revert HEAD
+[master 20a57c5] Revert "commiting after making changes to demoforrollback.py adding call() which has not been defined"
+ 1 file changed, 1 deletion(-)
+
+saran@DESKTOP-REEASVS MINGW64 ~/Desktop/guided_project/gitbygoogle/week2/practisingrollback (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
