@@ -1,0 +1,94 @@
+should not rewrite history when commits have been published
+
+if we want to create single commit that includes both changes and documentation
+"git rebase-i master"
+opens a text editor with a list of all the selected commits from the oldest to most recent
+
+==============================================
+
+1.What is the difference between using squash and fixup when rebasing?
+
+Squash combines commit messages into one,fixup discards new commit message
+
+2.What is a pull request?
+
+A request sent to the owners of target repo to pull the changes you recently made by forking their project
+
+
+3.What combination of command and flags will force Git to push the current snapshot to the repo as it is, possibly resulting in permanent data loss?
+
+git push -f
+
+4.When using interactive rebase, which option is the default, and takes the commits and rebases them against the branch we selected?
+
+pick
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+You shouldn't rewrite history when the commits have been published. 
+That's because someone else may have already synchronized that repo with those contents.
+This rule is waived with pull requests, since it's usually only you who have cloned your fork of the repository.
+So say the project maintainers ask us to create a single commit that includes both changes and a more detailed description than the one we submitted.
+We can do that by using the interactive version of the rebase command called rebase-i, as the parameter to the command will pass the master branch. "git rebase-i master"
+So we'll call git rebase-i master. When we call an interactive rebase, a text editor opens with a list of all the selected commits from the oldest to the most recent.
+By changing the first word of each line, we can select what we want to do with the commits.
+The default action here is "PICK" which takes the commits and rebases them against the branch we selected.
+The comments in the file tells all the different commands we can use for our commits.
+We can also edit the commit to add or remove changes from it. 
+We have two options for combining commits, "SQUASH" and "FIX UP". 
+In both cases, the contents of the selected commit are merged into the previous commit in the list. 
+The difference is what happens with the commit messages. 
+When we choose squash, the commit messages are added together and an editor opens up to let us make any necessary changes. 
+When we choose fix up, the commit message for that commit is discarded. 
+
+For our example, we want to use squash so that we can combine both commits but also modify the commit description.
+So let's change the pick command in the second line to squash it into the first one, then we'll save and exit the editor as usual.
+
+
+
+
+
+
+
+Once we've told git that we want to squash a commit unto the one before it, we're given another file to edit.
+In this case, it's the combined commit message.
+As usual, git shows us some helpful information in the comments including which files are modified and what commits are being combined.
+We want to improve the description by adding more info about our change.
+
+
+
+
+Yes, our rebase worked. Let's check the output of git show to see the latest commit and the changes in it. 
+Success, we got exactly what we wanted here, our two changes have been combined into one that contains the whole new file and the right commit message. 
+Before we try to push this change to our repo, let's call git status to check the info that git gives us about the current state.
+Git tells us that our local branch has one commit, which is the rebase we just did.
+It also tells us that the origin/add-readme branch has two commits.
+These are the two commits we had already pushed to the repo.
+
+
+
+
+
+As we expected, git doesn't like us trying to push our change because it can't be fast-forwarded. 
+But in this case, we don't want to create a merge.
+Instead, we want to replace the old commits with the new one.
+To do this, we will call git push -f to force git to push the current snapshot into the repo as is.
+
+
+
+Success. We've managed to combine both are commits into one by using the interactive version of git rebase.

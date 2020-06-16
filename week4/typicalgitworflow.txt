@@ -1,0 +1,24 @@
+TYPICAL PULL REQUEST WORKFLOW ON GITHUB FOR A FORKED REPO
+=========================================================
+
+NOW FORKED REPO ACTS AS REMOTE
+
+1.Fork the repo you would like to contribute to 
+
+2.clone the repo into local storage
+
+3.create a new branch to make any changes
+
+4.make changes/create new files here
+
+5.stage the changes using git add
+
+6.commit using git commit
+
+7.to push the change to our forked remote repo we need to create the remote branch
+"git push -u origin <branchname>"
+
+8.now we can create pull request in the GUI itself
+
+if there were merge conflicts we will have to rebase our changes against current branch of original repo
+clear description helps the person who will approve change understand why they should merge the change into the main tree
