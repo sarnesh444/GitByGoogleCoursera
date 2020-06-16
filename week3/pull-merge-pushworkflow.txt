@@ -1,0 +1,32 @@
+after making change to the file in the local
+
+1.staging "git add -p"
+
+2."git commit -m "message" "
+
+3.integrating remote changes with "git pull" we need to sync local remote branch with the remote repo before pushing
+
+4.git pull to fetch and merge the changes
+
+5.we can encounter a merge conflict here after a pull
+
+6.resolve the merge conflict
+What should you do with the <<<<<<<, =======, and >>>>>>> conflict markers when resolving a merge conflict?
+
+Remove all of the conflict markers and only leave the code as it should be after the merge.
+
+7."git add"(since a change was made to the file in solving the merge conflict)
+
+8."git commit -m "message" "
+
+9."git push " will now work
+
+
+BRANCHES TO REMOTE REPO:
+
+10."git checkout -b branchname " -The command git checkout -b <branch name> will first create a new branch and then switch to it.
+
+
+11."git commit -a -m "message" "=git add+git commit
+
+13."git push -u origin branchname" -pushing the branch to origin repo with refactor branch

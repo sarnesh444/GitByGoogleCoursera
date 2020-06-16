@@ -1,0 +1,56 @@
+1.create local copy of the repo 
+"git clone urlofrepo" 
+2.make changes to the cloned repo 
+3.push the changes using "git push"
+The git push command gathers all the snapshots we've taken and sends them to the remote repository.
+
+
+
+two ways to avoid having to enter our password when retrieving and when pushing changes to the repo. 
+	*credential helper
+	* SSH key-pair
+
+Credential helper
+to enable the credential helper-eliminates the need to enter the user name and password multiple times 
+"git config --global credential.helper cache"
+caches them for 15min
+
+
+4.to pull changes "git pull"
+
+
+
+
+
+Basic Interaction with GitHub Cheat-Sheet
+There are various remote repository hosting sites:
+
+GitHub
+BitBucket
+Gitlab.
+Follow the workflow at https://github.com/join to set up a free account, username, and password. After that, these steps will help you create a brand new repository on GitHub.
+
+Some useful commands for getting started:
+
+Command	Explanation & Link
+git clone URL	Git clone is used to clone a remote repository into a local workspace
+git push	Git push is used to push commits from your local repo to a remote repo
+git pull	Git pull is used to fetch the newest updates from a remote repository
+
+
+
+if the master repository receives a major update since the last local copy was synced?
+git will let you know it's time for an update.
+
+
+WORKFLOW WITH REMOTES
+
+PREVIOUSLY WE HAD
+1.MODIFY
+2.STAGING
+3.COMMITING LOCALLY
+NOW WE WILL ALSO HAVE
+4.FETCH
+5.MERGE
+6.PUSH
+s

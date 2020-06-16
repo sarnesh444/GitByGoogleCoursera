@@ -1,0 +1,25 @@
+REBASING
+
+once the remote branch properly works it can be merged with master branch
+
+1."git rebase "-rebasing means changing the base commit used for our branch
+
+note:merge basic stuff
+"when we create a branch at a certain point,git knows the latest commit that has been submitted on both branches"
+"if only one of the branches has new changes when we try to merge them git will be able to fast forward and apply changes "
+"but if both branches have new changes when we try to merge git will create a new merge commit for the three way merge"
+
+FOR SUCH A THREE WAY MERGE IT IS DIFFICULT TO DEBUG
+
+"by changing the base where our commits split we can replay the new commits on top of the new base"-allowing git to do a fast forward merge and keeps history linear
+
+"git rebase <branchthatwewantosetasnewbase>"
+
+
+2."git push --delete origin branchname"-deletes the remote branch
+
+3."git branch -d branchname"-deletes the branch locally
+
+
+“git rebase refactor”
+Moves the current branch on top of the refactor branch

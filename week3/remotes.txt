@@ -1,0 +1,39 @@
+1."git remote -v " helps check the configuration of the origin 
+
+remote repos have a name assigned to them default name is origin
+
+2."git remote show origin" gives more details about origin
+
+3."git branch -r"-gives a list of remote branches(i.e branches on github)
+
+these branches are read only and changes cannot be made to them directly
+
+to modify the content
+	a.pull new changes to local
+	b.merge with our changes
+	c.push our changes
+Pull the remote branch, merge it with the local branch, then push it back to its origin.
+
+
+local branches out of date-happens when commits are done to the repo but are not reflected locally
+
+
+4."git fetch "-to sync data,copies the commits done in the remote repo to remote branches thereby enabling us to see the what other people have commited
+fetch content downloaded to the remote branches on the remote repo and does not automatically reflect in the local branches
+
+5."git merge origin/master" merges the changes of the master branch in the remote repo into local branch 
+
+git fetch fetches remote updates but doesn't merge; git pull fetches remote updates and merges
+
+"FETCH CHANGES MANUALLY AND MERGE CHANGES IF NECESSARY AND ONLY THEN PUSH CHANGES OF OUR OWN"
+
+6."git pull"=git fetch+git merge
+
+if there is a new branch in the remote(eg.experimental) and after git pull if we execute "git checkout branchname(here experimental)" copies the content of the remote experimental branch to local branch
+
+Assuming no merge conflicts, which type of merge does git pull perform automatically?
+
+fast-forward merge
+
+As long as there are no conflicts, Git will move the current branch tip up to the target branch tip and combine histories of both commits.
+
